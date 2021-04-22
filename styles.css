@@ -1,0 +1,281 @@
+body {
+  position: relative;
+}
+
+.h1 {
+  color: #81ff00;
+  position: absolute;
+  bottom: 250px;
+  height: 100px;
+  width: 90px;
+  left: 35px;
+}
+
+:root {
+    --green: #81ff00;
+    --purple: #7e00ff;
+    --gray: #333;
+    --angle: 0deg;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    background: #111;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: "Chelsea Market", sans-serif;
+  }
+  
+  /* html:after {
+    content: "HULK";
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, 0%);
+    font-size: 25vw;
+    z-index: -1;
+    opacity:.13;
+  } */
+  
+  #hulk_box {
+    filter: drop-shadow(0 0 200px var(--purple));
+    perspective: 300px;
+  }
+  #hulk_box:before {
+    content: "";
+    width: 300px;
+    height: 100px;
+    background: #788;
+    position: absolute;
+    top: 75%;
+    transform: translateX(-25%) rotateX(45deg);
+  }
+  
+  #hulk_body {
+    width: 150px;
+    height: 225px;
+    background: var(--green);
+    border-radius: 15px 15px 0 0;
+    position: relative;
+  }
+  #hulk_body:before {
+    content: "";
+    width: 50px;
+    height: 150px;
+    background: linear-gradient(to right, transparent 10px, var(--gray) 10px),
+      var(--green);
+    background-size: 12px 20px, 100% 100%;
+    background-repeat: repeat-x, repeat;
+    background-position: bottom center, 0 0;
+    border-radius: 35px 0 0 0;
+    position: absolute;
+    top: 10px;
+    left: -35px;
+    transform-origin: top right;
+    transform: rotate(var(--angle));
+    z-index: 2;
+  }
+  #hulk_body:after {
+    content: "";
+    width: 50px;
+    height: 150px;
+    background: linear-gradient(to right, transparent 10px, var(--gray) 10px),
+      var(--green);
+    background-size: 12px 20px, 100% 100%;
+    background-repeat: repeat-x, repeat;
+    background-position: bottom center, 0 0;
+    border-radius: 0 35px 0 0;
+    position: absolute;
+    top: 10px;
+    left: calc(100% - 15px);
+    transform-origin: top left;
+    transform: rotate(var(--angle));
+  }
+  
+  .hulk_pecks {
+    width: 50%;
+    height: 50px;
+    border-bottom: 2px solid var(--gray);
+    border-radius: 25px;
+    position: absolute;
+    top: 15%;
+  }
+  .hulk_pecks:before {
+    content: "";
+    width: 100%;
+    height: 60%;
+    border-right: 2px solid var(--gray);
+    position: absolute;
+    top: 110%;
+    left: -1px;
+  }
+  .hulk_pecks:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid var(--gray);
+    border-radius: 25px;
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+  
+  .hulk_head {
+    width: 100px;
+    height: 100px;
+    background: var(--green);
+    position: absolute;
+    left: 25px;
+    top: -50px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.13);
+    border-radius: 5px 5px 25px 25px;
+  }
+  
+  .hulk_head:before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle at 60% 60%, white 4px, var(--gray) 4px);
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-100%);
+    border-radius: 50%;
+    clip-path: polygon(0% 0%, 100% 50%, 100% 100%, 0% 100%);
+  }
+  .hulk_head:after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle at 40% 60%, white 4px, var(--gray) 4px);
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    border-radius: 50%;
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  
+  .hulk_hair {
+    width: 100%;
+    height: 25px;
+    background: var(--gray);
+    border-radius: 4px 4px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      95% 80%,
+      90% 100%,
+      85% 80%,
+      80% 100%,
+      75% 80%,
+      70% 100%,
+      65% 80%,
+      60% 100%,
+      55% 80%,
+      50% 100%,
+      45% 80%,
+      40% 100%,
+      35% 80%,
+      30% 100%,
+      25% 80%,
+      20% 100%,
+      15% 80%,
+      10% 100%,
+      5% 80%,
+      0% 100%
+    );
+  }
+  
+  .hulk_mouth {
+    width: 50%;
+    height: 15px;
+    border-top: 3px solid var(--gray);
+    position: absolute;
+    top: 80%;
+    left: 25%;
+    border-radius: 15px;
+    transform: skewY(-5deg);
+  }
+  
+  .hulk_pants {
+    width: 100%;
+    height: 60px;
+    background: var(--purple);
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      95% 80%,
+      90% 100%,
+      85% 80%,
+      80% 100%,
+      75% 80%,
+      70% 100%,
+      65% 80%,
+      60% 100%,
+      55% 80%,
+      50% 100%,
+      45% 80%,
+      40% 100%,
+      35% 80%,
+      30% 100%,
+      25% 80%,
+      20% 100%,
+      15% 80%,
+      10% 100%,
+      5% 80%,
+      0% 100%
+    );
+  }
+  
+  .toes {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, var(--gray) 10%, transparent 10%);
+    background-size: 10% 100%;
+    border: 1px solid var(--gray);
+    border-top: 0;
+    border-bottom: 0;
+  }
+  .toes:after {
+    content: "";
+    width: 100%;
+    height: 75px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      to right,
+      transparent 49%,
+      var(--gray) 49%,
+      var(--gray) 51%,
+      transparent 51%
+    );
+  }
+  
+  #hulk_body:hover .hulk_head {
+    animation: shake 0.25s linear infinite;
+  }
+  
+  @keyframes shake {
+    25% {
+      transform: translateX(3px);
+    }
+    75% {
+      transform: translateX(-3px);
+    }
+  }
+  
